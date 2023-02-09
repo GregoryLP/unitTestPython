@@ -20,6 +20,7 @@ class Calculator:
         while abs(val - x / val) > precision:
             val = (val + x / val) / 2
         return val
+
 def calculate(operation, x, y):
     if operation == "add":
         result = Calculator.add(x,y)
