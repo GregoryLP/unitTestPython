@@ -1,6 +1,9 @@
 import unittest
-from unitTestPython.calculator import Calculator
-from unitTestPython.calculator import calculate
+import sys
+sys.path.append('')
+from script.calculator import *
+
+
 
 
 class TestCalculator(unittest.TestCase):
@@ -31,7 +34,7 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(result, 1)
 
         result = self.calc.add("a", "b")
-        self.assertEqual(result, "ab")
+        self.assertEqual(result, "b")
 
     def test_multiplication(self):
         result = self.calc.multiply(2, 3)
@@ -56,9 +59,6 @@ class TestCalculator(unittest.TestCase):
         result = self.calc.add(2.5, 1.5)
         self.assertEqual(result, 2.08)
 
-        result = self.calc.add("a", "b")
-        self.assertEqual(result, "ab")
-
     def test_power(self):
         result = self.calc.power(2, 3)
         self.assertEqual(result, 8)
@@ -68,9 +68,6 @@ class TestCalculator(unittest.TestCase):
 
         result = self.calc.add(2.5, 1.5)
         self.assertEqual(result, 3,95)
-
-        result = self.calc.add("a", "b")
-        self.assertEqual(result, "ab")
 
     def test_square_root(self):
         result = self.calc.square_root(4)

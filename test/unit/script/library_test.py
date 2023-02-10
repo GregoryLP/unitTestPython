@@ -1,5 +1,8 @@
 import unittest
-from unitTestPython.bibliotheque import *
+from script.bibliotheque import *
+import sys
+
+sys.path.append('')
 
 class TestLibrary(unittest.TestCase):
     def setUp(self):
