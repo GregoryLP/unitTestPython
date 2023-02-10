@@ -11,40 +11,40 @@ class TestCalculator(unittest.TestCase):
         self.calc = Calculator()
 
     def test_addition(self):
-        result = self.calc.add(1, 2)
-        self.assertEqual(result, 3)
+        result = self.calc.add(3, 6)
+        self.assertEqual(result, 9)
 
-        result = self.calc.add(-1, -2)
-        self.assertEqual(result, -3)
+        result = self.calc.add(-3, -6)
+        self.assertEqual(result, -9)
 
-        result = self.calc.add(2.5, 1.5)
-        self.assertEqual(result, 4)
+        result = self.calc.add(4,5, 5,5)
+        self.assertEqual(result, 10)
 
-        result = self.calc.add("a", "b")
-        self.assertEqual(result, "ab")
+        result = self.calc.add("e", "f")
+        self.assertEqual(result, "ef")
 
     def test_subtraction(self):
-        result = self.calc.subtract(2, 1)
-        self.assertEqual(result, 1)
+        result = self.calc.subtract(6, 3)
+        self.assertEqual(result, 3)
 
-        result = self.calc.add(-1, -2)
-        self.assertEqual(result, 1)
+        result = self.calc.add(-6, -3)
+        self.assertEqual(result, -3)
 
-        result = self.calc.add(2.5, 1.5)
-        self.assertEqual(result, 1)
+        result = self.calc.add(4,5, 2.5)
+        self.assertEqual(result, 2)
 
-        result = self.calc.add("a", "b")
-        self.assertEqual(result, "b")
+        result = self.calc.add("e", "f")
+        self.assertEqual(result, "f")
 
     def test_multiplication(self):
-        result = self.calc.multiply(2, 3)
-        self.assertEqual(result, 6)
+        result = self.calc.multiply(3, 6)
+        self.assertEqual(result, 18)
 
-        result = self.calc.add(-1, -2)
-        self.assertEqual(result, -2)
+        result = self.calc.add(-3, -6)
+        self.assertEqual(result, -18)
 
-        result = self.calc.add(2.5, 1.5)
-        self.assertEqual(result, 3.75)
+        result = self.calc.add(3.5, 1.5)
+        self.assertEqual(result, 5.25)
 
         result = self.calc.add("a", "b")
         self.assertEqual(result, "ab")
@@ -56,8 +56,8 @@ class TestCalculator(unittest.TestCase):
         result = self.calc.add(-1, -2)
         self.assertEqual(result, -0.5)
 
-        result = self.calc.add(2.5, 1.5)
-        self.assertEqual(result, 2.08)
+        result = self.calc.add(4.5, 8.5)
+        self.assertEqual(result, 0.52)
 
     def test_power(self):
         result = self.calc.power(2, 3)
@@ -74,20 +74,20 @@ class TestCalculator(unittest.TestCase):
         self.assertAlmostEqual(result, 2, places=7)
 
 def test_calculate(self):
-    result = calculate("add", 1, 2)
+    result = calculate("add", 6, 3)
+    self.assertEqual(result, 9)
+
+    result = calculate("substract", 6, 3)
     self.assertEqual(result, 3)
 
-    result = calculate("substract", 2, 1)
-    self.assertEqual(result, 1)
+    result = calculate("multiply", 6, 3)
+    self.assertEqual(result, 18)
 
-    result = calculate("multiply", 2, 3)
-    self.assertEqual(result, 6)
+    result = calculate("divide", 5, 2)
+    self.assertEqual(result, 2.5)
 
-    result = calculate("divide", 6, 3)
-    self.assertEqual(result, 2)
-
-    result = calculate("power", 2, 3)
-    self.assertEqual(result, 8)
+    result = calculate("power", 5, 3)
+    self.assertEqual(result, 125)
 
     result = calculate("square_root", 4)
     self.assertAlmostEqual(result, 2, places=7)

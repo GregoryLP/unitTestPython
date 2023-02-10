@@ -1,7 +1,8 @@
 import unittest
-from script.bibliotheque import Book
 import sys
 sys.path.append('')
+from script.bibliotheque import Book
+
 
 class TestBook(unittest.TestCase):
     def setUp(self):

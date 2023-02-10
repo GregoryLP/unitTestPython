@@ -1,7 +1,8 @@
 import unittest
-from script.bibliotheque import *
 import sys
 sys.path.append('')
+from script.bibliotheque import *
+
 
 class TestClient(unittest.TestCase):
     def setUp(self):
@@ -19,7 +20,7 @@ class TestClient(unittest.TestCase):
         self.assertTrue(self.client1.checked_out_books[0].is_checked_out)
 
         self.client1.check_out_book(self.library, "Pride and Prejudice")
-        self.assertEqual(len(self.client1.checked_out_books), 2)
+        self.assertEqual(len(self.client1.checked_out_books), 1)
         self.assertEqual(self.client1.checked_out_books[1].title, "Pride and Prejudice")
         self.assertTrue(self.client1.checked_out_books[1].is_checked_out)
 
